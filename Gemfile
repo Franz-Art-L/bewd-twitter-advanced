@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '3.0.3'
+ruby '3.1.2'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.1.4'
@@ -28,7 +28,7 @@ gem 'jbuilder', '~> 2.11'
 gem 'bcrypt', '~> 3.1'
 
 # AWS S3
-gem 'aws-sdk-s3', '~> 1.112'
+#gem 'aws-sdk-s3', '~> 1.112'
 
 # Webrick
 gem "webrick", "~> 1.7"
@@ -49,9 +49,9 @@ group :development, :test do
   # Added by Altcademy.com
   gem 'awesome_print', '~> 1.9'
   gem 'dotenv-rails', '~> 2.7.6'
-  gem 'factory_bot_rails', '~> 6.2'
+  gem 'factory_bot_rails', '~> 5.1.1'
   gem 'pry-rails', '>= 0.3.9'
-  gem 'rspec-rails', '~> 5.1'
+  gem 'rspec-rails', '~> 4.0'
 end
 
 group :development do
@@ -70,3 +70,11 @@ group :production do
   # Use pg as the database for Active Record
   # gem 'pg', '~> 1.3.1'
 end
+
+# I added this one
+gem 'net-smtp', require: false
+gem 'net-imap', require: false
+gem 'net-pop', require: false
+
+# activeStorage with s3
+gem 'aws-sdk', require: false
