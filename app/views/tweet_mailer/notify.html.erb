@@ -18,8 +18,8 @@
           
           <%= @tweet.message %>
 
-          <%= if @tweet.image.attached? %>
-                <%= image_tag_url_for(@tweet.image) %>
+          <% if @tweet.image.attached? %>
+                <%= image_tag @tweet.image %>
           <% end %>
 
         </p>
