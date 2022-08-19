@@ -11,6 +11,10 @@ class User < ApplicationRecord
 
   after_validation :hash_password
 
+  def rate_limit_passed?
+    self.tweets.where('created_at > ?', Time.now - 60.minutes).count < 30
+  end
+
   private
 
     def hash_password

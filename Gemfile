@@ -78,3 +78,6 @@ gem 'net-pop', require: false
 
 # activeStorage with s3
 gem 'aws-sdk', require: false
+
+# added this gem for image analysis
+gem 'mini_magick'
