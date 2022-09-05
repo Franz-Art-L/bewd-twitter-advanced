@@ -53,3 +53,22 @@ class TweetsController < ApplicationController
       params.require(:tweet).permit(:message, :image)
     end
 end
+
+# Adding formData property for nested API parameters
+# For some API requests, we might need a nested body data structure. Such is the case for the Twitter clone we did in the Ruby on Rails course.
+
+# def tweet_params
+# params.require(:tweet).permit(:message, :image)
+# end
+
+# js:
+
+# const msg = document.getElementById('message-input');
+# const image = document.getElementById('image-select').files[0];
+# const formData = new FormData();
+
+# formData.append('tweet[message]', msg);
+# formData.append('tweet[image]', image, image.name);
+
+# Note when using fetch requests
+# If you are using JavaScript fetch requests to upload a file (image etc.), make sure you don't declare any "Content-Type" and "Accept" property in the fetch options header object. The form data object will handle this automatically.
